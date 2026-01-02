@@ -141,7 +141,7 @@ let shortcutKeys = {
 // Default values
 const DEFAULT_PROVIDER = 'google-free'; // Free provider by default
 const DEFAULT_API_KEYS = {
-  anthropic: '', // Users should enter their own API key
+  anthropic: '', // Users should enter their own API key (use update-api-key.js script to load from .env for local dev)
   openai: '',
   mistral: '',
   perplexity: ''

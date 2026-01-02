@@ -14,13 +14,25 @@ This extension uses a `.env` file to store the default Anthropic API key locally
    ANTHROPIC_API_KEY=your_actual_api_key_here
    ```
 
+## Using the API Key
+
+To load the API key from `.env` into the extension:
+
+1. Run the update script:
+   ```bash
+   node update-api-key.js
+   ```
+
+   This will automatically read `ANTHROPIC_API_KEY` from `.env` and update `popup.js`.
+
+2. The script updates `DEFAULT_API_KEYS.anthropic` in `popup.js` with the value from `.env`
+
 ## Important Notes
 
 - The `.env` file is gitignored and will **not** be committed to the repository
 - Browser extensions cannot directly load `.env` files at runtime
-- To use the API key from `.env` in the extension:
-  1. Manually copy the value from `.env` to `popup.js` in the `DEFAULT_API_KEYS.anthropic` field for local development
-  2. Or use a build script to inject it during development
+- The `update-api-key.js` script must be run to sync the `.env` value to the code
+- **Never commit** `popup.js` with a real API key - always use an empty string for production
 
 ## For Production
 
