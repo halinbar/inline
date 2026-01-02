@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Inline Settings</h1>
+    
+    <!-- LLM Provider Section -->
+    <div class="collapsible-section collapsed">
+      <div class="collapsible-header" id="llmProviderHeader">
+        <span class="collapsible-title">LLM Provider</span>
+        <span class="collapsible-icon">▼</span>
+      </div>
+      <div class="collapsible-content" id="llmProviderContent">
+        <div class="section">
+          <label for="providerSelect">LLM Provider:</label>
+          <select id="providerSelect">
+            <option value="anthropic">Anthropic (Claude)</option>
+            <option value="cohere-free">Cohere</option>
+            <option value="google-free">Google Gemini</option>
+            <option value="groq">Groq</option>
+            <option value="huggingface">Hugging Face</option>
+            <option value="mistral">Mistral AI</option>
+            <option value="openai">OpenAI</option>
+            <option value="perplexity">Perplexity</option>
+            <option value="together">Together AI</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <label for="apiKey">API Key:</label>
+          <input type="password" id="apiKey" placeholder="Enter your API key">
+          <button id="toggleKey" class="toggle-btn">Show</button>
+        </div>
+
+        <div class="section">
+          <label for="model">Model:</label>
+          <select id="model">
+            <option value="">Select a model...</option>
+          </select>
+          <button id="refreshModels" class="refresh-btn">Refresh Models</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Functions Section -->
+    <div class="collapsible-section collapsed">
+      <div class="collapsible-header" id="functionsHeader">
+        <span class="collapsible-title">Functions</span>
+        <span class="collapsible-icon">▼</span>
+      </div>
+      <div class="collapsible-content" id="functionsContent">
+        <div class="section">
+          <label for="shortcutFixLanguage">Fix language:</label>
+          <div class="shortcut-input">
+            <input type="text" id="shortcutFixLanguage" readonly placeholder="Press keys...">
+            <button id="clearShortcutFixLanguage" class="clear-btn">Clear</button>
+          </div>
+          <small>Default: Cmd+Ctrl+Shift+T</small>
+        </div>
+        <div class="section">
+          <label for="shortcutRephrase">Rephrase to friendly and professional:</label>
+          <div class="shortcut-input">
+            <input type="text" id="shortcutRephrase" readonly placeholder="Press keys...">
+            <button id="clearShortcutRephrase" class="clear-btn">Clear</button>
+          </div>
+          <small>Default: Cmd+Ctrl+Shift+R</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <button id="save" class="save-btn">Save Settings</button>
+      <div id="status" class="status"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
